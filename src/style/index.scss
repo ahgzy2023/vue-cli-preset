@@ -1,0 +1,132 @@
+// @import "./var.scss";
+// @import "./format.scss";
+@import './animation.scss';
+// @import "./mixins/mixins.scss";
+// @import "./color.scss";
+
+#preset-app {
+  //height: $contentHeight;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, FangSong, SimHei, STHeiti, STKaiti, STSong,
+    STFangsong sans-serif;
+
+  label {
+    font-weight: 700;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  a:focus,
+  a:active {
+    outline: none;
+  }
+
+  a,
+  a:focus,
+  a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  div:focus {
+    outline: none;
+  }
+
+  .table-slot-name {
+    font-size: 14px;
+    line-height: 22px;
+    color: #1890ff;
+    cursor: pointer;
+  }
+
+  .clearfix {
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: ' ';
+      clear: both;
+      height: 0;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  // main-container global css
+  .datamap-container {
+    padding: 20px;
+    .ant-spin-nested-loading > div > .ant-spin {
+      background: #fff;
+      max-height: none;
+    }
+  }
+  .full-modal {
+    .ant-modal {
+      max-width: 100%;
+      top: 0;
+      padding-bottom: 0;
+      margin: 0;
+    }
+    .ant-modal-close {
+      position: relative;
+      left: 20px;
+      top: 60px;
+    }
+    .ant-modal-content {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 0px);
+      overflow: hidden;
+      padding: 20px;
+      // top: 60px;
+    }
+    .ant-modal-body {
+      flex: 1;
+      margin-top: 40px;
+      overflow-y: scroll;
+    }
+  }
+  .datamap-status {
+    position: relative;
+    margin-left: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -13px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
+  .datamap-max-lifecycle {
+    &::before {
+      background: var(--deSuccess, #096dd9);
+    }
+  }
+  .datamap-middle-lifecycle {
+    &::before {
+      background: var(--deSuccess, #1890ff);
+    }
+  }
+  .datamap-minimum-lifecycle {
+    &::before {
+      background: var(--deSuccess, #69c0ff);
+    }
+  }
+}
